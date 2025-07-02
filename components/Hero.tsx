@@ -27,10 +27,10 @@ export default function Hero() {
 			<div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center">
 					{/* Left Column - Content */}
 					<div className="text-center lg:text-left">
-						<div className="flex items-center justify-center lg:justify-start mb-6">
+						<div className="flex items-center justify-center lg:justify-start mb-2 lg:mb-6">
 							<div className="flex items-center space-x-2 bg-blue-500/10 px-2 py-1 lg:px-4 lg:py-2 rounded-full border border-blue-500/20">
 								<Sparkles className="h-5 w-5 text-blue-400" />
 								<span className="text-blue-400 text-sm font-medium">
@@ -39,21 +39,22 @@ export default function Hero() {
 							</div>
 						</div>
 
-						<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+						<h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-white mb-2 lg:mb-6 leading-tight">
 							MC
-							<span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+							<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+								{" "}
 								Quốc Anh
 							</span>
 						</h1>
 
-						<p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+						<p className="text-lg md:text-2xl text-gray-300 mb-4 lg:mb-8 max-w-2xl">
 							Dẫn dắt những giây phút
 							<span className="text-blue-400 font-semibold"> quan trọng</span> –
 							Tạo nên dấu ấn
 							<span className="text-purple-400 font-semibold"> khó quên</span>
 						</p>
 
-						<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+						<div className="flex gap-4 justify-center lg:justify-start mb-12">
 							<Button
 								onClick={scrollToContact}
 								size="lg"
@@ -73,26 +74,37 @@ export default function Hero() {
 
 						{/* Stats */}
 						<div className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
-							<div className="text-center">
+							<div
+								className="text-center"
+								data-aos="fade-up"
+							>
 								<div className="flex items-center justify-center mb-2">
 									<Award className="h-6 w-6 text-blue-400" />
 								</div>
 								<div className="text-2xl font-bold text-white">500+</div>
-								<div className="text-sm text-gray-400">Events Hosted</div>
+								<div className="text-sm text-gray-400">Sự kiện thành công</div>
 							</div>
-							<div className="text-center">
+							<div
+								className="text-center"
+								data-aos="fade-up"
+								data-aos-delay="200"
+							>
 								<div className="flex items-center justify-center mb-2">
 									<Users className="h-6 w-6 text-purple-400" />
 								</div>
 								<div className="text-2xl font-bold text-white">10K+</div>
-								<div className="text-sm text-gray-400">Happy Guests</div>
+								<div className="text-sm text-gray-400">Khách hàng</div>
 							</div>
-							<div className="text-center">
+							<div
+								className="text-center"
+								data-aos="fade-up"
+								data-aos-delay="400"
+							>
 								<div className="flex items-center justify-center mb-2">
 									<Sparkles className="h-6 w-6 text-blue-400" />
 								</div>
 								<div className="text-2xl font-bold text-white">8</div>
-								<div className="text-sm text-gray-400">Years Experience</div>
+								<div className="text-sm text-gray-400">Năm kinh nghiệm</div>
 							</div>
 						</div>
 					</div>

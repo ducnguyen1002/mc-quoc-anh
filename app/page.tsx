@@ -1,3 +1,4 @@
+"use client";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -5,12 +6,23 @@ import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Link from "next/link";
+import AboutMe from "@/components/AboutMe";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useEffect } from "react";
 
 export default function Home() {
+	useEffect(() => {
+		AOS.init({
+			duration: 800,
+			easing: "ease-in-out",
+		});
+	}, []);
 	return (
 		<main className="min-h-screen bg-black">
 			<Navigation />
 			<Hero />
+			<AboutMe />
 			<Services />
 			<Gallery />
 			<Testimonials />

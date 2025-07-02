@@ -25,7 +25,7 @@ export default function Gallery() {
 			thumb:
 				"https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&w=400",
 			title: "Grand Opening Ceremony",
-			category: "Grand Opening",
+			category: "Khai trương",
 		},
 		{
 			id: 3,
@@ -34,7 +34,7 @@ export default function Gallery() {
 			thumb:
 				"https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=400",
 			title: "Elegant Wedding Reception",
-			category: "Wedding",
+			category: "Đám cưới",
 		},
 		{
 			id: 4,
@@ -52,7 +52,7 @@ export default function Gallery() {
 			thumb:
 				"https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=400",
 			title: "Product Launch Event",
-			category: "Grand Opening",
+			category: "Khai trương",
 		},
 		{
 			id: 6,
@@ -61,7 +61,7 @@ export default function Gallery() {
 			thumb:
 				"https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=400",
 			title: "Romantic Garden Wedding",
-			category: "Wedding",
+			category: "Đám cưới",
 		},
 		{
 			id: 7,
@@ -79,7 +79,7 @@ export default function Gallery() {
 			thumb:
 				"https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&cs=tinysrgb&w=400",
 			title: "Store Opening Celebration",
-			category: "Grand Opening",
+			category: "Khai trương",
 		},
 	];
 
@@ -102,12 +102,12 @@ export default function Gallery() {
 		>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-						Event Gallery
+					<h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+						Thư viện sự kiện
 					</h2>
-					<p className="text-xl text-gray-300 max-w-3xl mx-auto">
-						Take a look at some of the memorable moments from events I've had
-						the privilege to host.
+					<p className="text-lg text-gray-300 max-w-3xl mx-auto">
+						Cùng nhìn lại những khoảnh khắc đáng nhớ tại các sự kiện tôi đã vinh
+						dự đồng hành dẫn dắt.
 					</p>
 				</div>
 
@@ -125,10 +125,12 @@ export default function Gallery() {
 					))}
 				</div>
 
-				{/* Gallery grid */}
+				{/* Lưới ảnh gallery */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-					{filteredItems.map((item) => (
+					{filteredItems.map((item, index) => (
 						<div
+							data-aos="zoom-in"
+							data-aos-delay={index * 50}
 							key={item.id}
 							className="group relative aspect-square cursor-pointer overflow-hidden rounded-lg bg-gray-800"
 							onClick={() => openLightbox(item)}
@@ -162,7 +164,7 @@ export default function Gallery() {
 					))}
 				</div>
 
-				{/* Lightbox */}
+				{/* Khung xem chi tiết (Lightbox) */}
 				{selectedMedia && (
 					<div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
 						<div className="relative max-w-4xl max-h-full">
@@ -190,7 +192,7 @@ export default function Gallery() {
 							)}
 
 							<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-								<h3 className="text-white text-xl font-semibold mb-1">
+								<h3 className="text-white text-lg font-semibold mb-1">
 									{selectedMedia.title}
 								</h3>
 								<p className="text-blue-400">{selectedMedia.category}</p>

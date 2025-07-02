@@ -44,7 +44,7 @@ export default function Navigation() {
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center space-x-2">
 						<Mic className="h-8 w-8 text-blue-400" />
-						<span className="text-xl font-bold text-white">Quốc Anh</span>
+						<span className="text-lg font-bold text-white">QuocAnh</span>
 					</div>
 
 					{/* Desktop Navigation */}
@@ -68,7 +68,7 @@ export default function Navigation() {
 							onClick={() => scrollToSection("#contact")}
 							className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
 						>
-							Book Now
+							Liên hệ ngay
 						</Button>
 					</div>
 
