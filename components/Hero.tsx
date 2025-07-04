@@ -1,7 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Sparkles, Award, Users } from "lucide-react";
+import {
+	Sparkles,
+	Award,
+	Users,
+	Ruler,
+	Weight,
+	Mic,
+	LucideFan,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
 	const scrollToContact = () => {
@@ -79,46 +88,53 @@ export default function Hero() {
 								data-aos="fade-up"
 							>
 								<div className="flex items-center justify-center mb-2">
-									<Award className="h-6 w-6 text-blue-400" />
+									<Ruler className="h-6 w-6 text-blue-400" />
 								</div>
-								<div className="text-2xl font-bold text-white">500+</div>
-								<div className="text-sm text-gray-400">Sự kiện thành công</div>
+								<div className="text-2xl font-bold text-white">1m72</div>
+								<div className="text-sm text-gray-400">Chiều cao</div>
 							</div>
+
 							<div
 								className="text-center"
 								data-aos="fade-up"
 								data-aos-delay="200"
 							>
 								<div className="flex items-center justify-center mb-2">
-									<Users className="h-6 w-6 text-purple-400" />
+									<LucideFan className="h-6 w-6 text-purple-400" />
 								</div>
-								<div className="text-2xl font-bold text-white">10K+</div>
-								<div className="text-sm text-gray-400">Khách hàng</div>
+								<div className="text-2xl font-bold text-white">68kg</div>
+								<div className="text-sm text-gray-400">Cân nặng</div>
 							</div>
+
 							<div
 								className="text-center"
 								data-aos="fade-up"
 								data-aos-delay="400"
 							>
 								<div className="flex items-center justify-center mb-2">
-									<Sparkles className="h-6 w-6 text-blue-400" />
+									<Mic className="h-6 w-6 text-blue-400" />
 								</div>
-								<div className="text-2xl font-bold text-white">8</div>
-								<div className="text-sm text-gray-400">Năm kinh nghiệm</div>
+								<div className="text-2xl font-bold text-white">Giọng Bắc</div>
+								<div className="text-sm text-gray-400">Chuẩn</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Right Column - Image */}
+					{/* Right Column - Image with Neon Glow */}
 					<div className="flex justify-center lg:justify-end">
 						<div className="relative">
-							<div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full filter blur-2xl opacity-20 scale-110"></div>
-							<div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-700 shadow-2xl">
-								<img
-									src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800"
+							{/* Neon Glow Effect */}
+							<div className="absolute inset-0 animate-neon-glow rounded-full z-0" />
+
+							{/* Image Container */}
+							<div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl z-10 bg-transparent">
+								<Image
+									src="/images/self/1.png" // PNG tách nền
 									alt="Quốc Anh - Professional MC"
-									className="w-full h-full object-cover"
+									className="w-full h-full object-cover" // dùng object-contain cho ảnh PNG tách nền
+									fill
 								/>
+								{/* Optional: Gradient overlay for depth */}
 								<div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 							</div>
 						</div>

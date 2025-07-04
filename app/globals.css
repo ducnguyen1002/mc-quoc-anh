@@ -44,6 +44,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -76,7 +77,65 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  @keyframes neon-glow {
+    0% {
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+      transform: scale(1);
+    }
+
+    25% {
+      box-shadow: 0 0 20px #ff00ff, 0 0 35px #ff00ff, 0 0 50px #ff00ff;
+      transform: scale(1.05);
+    }
+
+    50% {
+      box-shadow: 0 0 10px #00ff88, 0 0 25px #00ff88, 0 0 35px #00ff88;
+      transform: scale(0.97);
+    }
+
+    75% {
+      box-shadow: 0 0 25px #ff00ff, 0 0 45px #ff00ff, 0 0 60px #ff00ff;
+      transform: scale(1.08);
+    }
+
+    100% {
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+      transform: scale(1);
+    }
+  }
+
+  .animate-neon-glow {
+    animation: neon-glow 2s infinite ease-in-out;
+  }
+
+  @keyframes falling-light {
+    0% {
+      transform: translateY(-100%) translateX(0) scaleX(0.5);
+      opacity: 0;
+    }
+
+    30% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh) translateX(10px) scaleX(1);
+      opacity: 0;
+    }
+  }
+
+  .falling-star {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(to bottom, #80d0ff, transparent);
+    opacity: 0;
+    filter: blur(1px);
+    animation: falling-light 4s linear infinite;
   }
 }
